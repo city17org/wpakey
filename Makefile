@@ -1,16 +1,10 @@
 PROG=		wpakey
-SRCS=		wpakey.c
-
-CFLAGS += -Werror -Wall -Wunused-variable
+MAN=		wpakey.1
 
 LDADD = -lutil
-NOMAN = Yes
 
 PREFIX ?= /usr/local
 BINDIR ?= ${PREFIX}/bin
-.if "${BINDIR}" == "${HOME}/bin"
-BINOWN ?= ${USER}
-BINGRP != id -g -n
-.endif
+MANDIR ?= ${PREFIX}/man/man
 
 .include <bsd.prog.mk>
